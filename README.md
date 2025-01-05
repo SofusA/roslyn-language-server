@@ -1,12 +1,11 @@
 # roslyn-language-server
-A wrapper around the language server behind the C# Visual Studio Code extension, `Microsoft.CodeAnalysis.LanguageServer`, which makes it compatible with other editors, e.g., Helix or Neovim.
+A helping tool for the language server behind the C# Visual Studio Code extension, `Microsoft.CodeAnalysis.LanguageServer`, to make it compatible with other editors, e.g., Helix or Neovim.
 This language server is more stable and faster than OmniSharp.
 
 This tool assists the use of Microsoft.CodeAnalysis.LanguageServer:
 - Downloads `Microsoft.CodeAnalysis.LanguageServer`
 - Launches `Microsoft.CodeAnalysis.LanguageServer` as a process
 - Passes the provided `unix socket` or named pipe and forwards all communication to `stdio` 
-- Waits for `capabilities` notification from the server, and forces `pull diagnostics` to be available. This forces the server respect clients who do not support dynamic registration of diagnostic capabilities.
 - Waits for an `initialize` notification from the client, and finds relevant `.sln` or `.csproj` files and sends them to the server as a custom `open` notification.
 
 ## Installation
